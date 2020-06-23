@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pessoa</title>
+</head>
+<body>
+    <div class="container">
+    	<h1>Cadastro de Pessoa</h1>
+    	
+    	<form method="post" th:object="${person}" th:action="@{/persons}">
+    		<input type="hidden" th:field="*{id}">
+            <div class="form-group">
+                <div class="row">
+                    <label class="col-sm-2 col-form-label">Nome</label>
+                    <input type="text" th:field="*{name}" class="form-control col-sm-4">
+
+                    <label class="col-sm-2 col-form-label">Data de Nascimento</label>
+                    <input type="text" th:field="*{birthdate}" class="form-control col-sm-4 datepicker" data-provide="datepicker" data-date-format="dd-mm-yyyy" data-date-language="pt"
+                               data-date-autoclose="true" data-date-today-highlight="true"
+                               data-date-orientation="bottom">
+                </div>
+                <div class="row mt-2">
+                    <label class="col-sm-2 col-form-label">Email</label>
+                    <input type="text" th:field="*{email}" class="form-control col-sm-4">
+
+                    <label class="col-sm-2 col-form-label">Celular</label>
+                    <input type="text" th:field="*{phone}" class="form-control col-sm-4">
+                </div>
+                
+                <button class="btn btn-primary offset-2 mt-1">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+    
+    <script th:src="@{/js/jquery.min.js}" src="js/jquery.min.js"></script>
+	<script th:src="@{/js/popper.min.js}" src="js/popper.min.js"></script>
+	<script th:src="@{/js/bootstrap-datepicker.min.js}" src="js/bootstrap-datepicker.min.js"></script>
+	<script th:src="@{/js/bootstrap-datepicker.pt.min.js}" src="js/bootstrap-datepicker.pt.min.js"></script>
+</body>
+</html>
