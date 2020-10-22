@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
-	<link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Pessoas</title>
 </head>
 <body>
-    <div class="container">
+<div class="container">
     <h1>Lista de Pessoas</h1>
-    	<table class="table table-striped">
-    		<thead>
-    			<th>Id</th>
-    			<th>Nome</th>
-    			<th>Data de Nasc.</th>
-    			<th>Celular</th>
-    			<th>Email</th>
-    		</thead>
-    		
-    		<tr th:each="person: ${persons}">
-	    		 <td th:text="${person.id}"></td>
-	    		 <td th:text="${person.name}"></td>
-	    		 <td th:text="${person.birthdate}"></td>
-	    		 <td th:text="${person.phone}"></td>
-	    		 <td th:text="${person.email}"></td>
-	    		 <td>
-	    		 	<a class="btn btn-warning" th:href="@{'/persons/'+${person.id}+'/update'}" >
-	    		 		 <i class="fas fa-pencil-alt"></i>
-	    		 	</a>
-	    		 	<a class="btn btn-danger ml-2" th:href="@{'/persons/'+${person.id}+'/delete'}">
-	    		 		<i class="fas fa-trash"></i>
-	    		 	</a>
-	    		 </td>
-	    		</tr>
-    	</table>
-    </div>
+    <table class="table table-striped">
+        <thead>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Data de Nasc.</th>
+        <th>Celular</th>
+        <th>Email</th>
+        </thead>
+
+        <tr th:each="person: ${persons}">
+            <td th:text="${person.id}"></td>
+            <td th:text="${person.name}"></td>
+            <td th:text="${person.birthdate}"></td>
+            <td th:text="${person.phone}"></td>
+            <td th:text="${person.email}"></td>
+            <td>
+                <a class="btn btn-warning" th:href="@{'/persons/'+${person.id}+'/update'}">
+                    <i class="fas fa-pencil-alt"></i>
+                </a>
+                <a class="btn btn-danger ml-2" th:href="@{'/persons/'+${person.id}+'/delete'}">
+                    <i class="fas fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

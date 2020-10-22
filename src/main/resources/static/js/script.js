@@ -7,4 +7,4 @@ function habilita(radio) {
     }
 }
 
-$("body").tooltip({ selector: '[data-toggle=tooltip]' });
+$("body").tooltip({selector: '[data-toggle=tooltip]'});
